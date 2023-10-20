@@ -1,6 +1,7 @@
+
 <script>
 	// @ts-nocheck
-
+	import toast, { Toaster } from 'svelte-french-toast';
 	let step = 1;
 	let firstName, lastName, email, gender, idNumber, phoneNumber, dob, password;
 
@@ -18,6 +19,14 @@
 		(phoneNumber ? 12.5 : 0) +
 		(dob ? 12.5 : 0) +
 		(password ? 12.5 : 0);
+
+
+
+		function success (){
+	toast.success('yessss');
+		}
+	
+	
 </script>
 
 <div class="flex m-4 h-full">
@@ -27,12 +36,10 @@
 		<div class="progress-bar bg-gray-400 relative">
 			
 			<div class="absolute top-0 left-0 w-full flex justify-between"><div
-				class="progress h-1 bg-blue-500 transition-all duration-700 ease-in-out absolute"
+				class="progress h-1 bg-blue-500 transition-all duration-700 ease-in-out absolute "
 				style="width: {progress}%"
 			/>
-				<div class="circle bg-blue-500 w-4 h-4 rounded-full left-0" />
-				<div class="circle bg-blue-500 w-4 h-4 rounded-full left-1/2" />
-				<div class="circle bg-blue-500 w-4 h-4 rounded-full right-0" />
+				
 			</div>
 		</div>
 		{#if step === 1}
@@ -74,6 +81,7 @@
 						id="gender"
 						bind:value={gender}
 					>
+					<option ></option>
 						<option>Male</option>
 						<option>Female</option>
 						<option>Other</option>
@@ -81,7 +89,7 @@
 				</div>
 				<button
 					class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-					on:click={next}>Next</button
+					on:click={success}>Next</button
 				>
 			</div>
 		{/if}
@@ -147,3 +155,4 @@
 		{/if}
 	</div>
 </div>
+<Toaster />
