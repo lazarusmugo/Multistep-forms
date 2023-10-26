@@ -1,6 +1,7 @@
 
 <script>
 	// @ts-nocheck
+
 	import toast, { Toaster } from 'svelte-french-toast';
 	let step = 1;
 	let firstName, lastName, email, gender, idNumber, phoneNumber, dob, password;
@@ -23,14 +24,15 @@
 
 
 		function success (){
-	toast.success('yessss');
+	toast.success('yessss sir');
 		}
+	
 	
 	
 </script>
 
-<div class="flex m-4 h-full">
-	<div class="w-1/2 h-auto bg-cover" style="background-image: url('/cars.jpg')" />
+<div class="flex m-4 ">
+	<div class="w-1/2 h-1/2 bg-cover" style="background-image: url('/cars.jpg')" />
 
 	<div class="w-1/2 border p-4 h-full">
 		<div class="progress-bar bg-gray-400 relative">
@@ -89,7 +91,7 @@
 				</div>
 				<button
 					class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-					on:click={success}>Next</button
+					on:click={success, next}>Next</button
 				>
 			</div>
 		{/if}
@@ -151,6 +153,12 @@
 					class="pt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
 					on:click={prev}>Previous</button
 				>
+
+
+				<div> Proceed to home page
+					<a href="./home" class="text-[rgb(251,160,24)]">Home</a>
+				</div>
+			
 			</div>
 		{/if}
 	</div>
